@@ -4,16 +4,18 @@ import { test } from "../../fixture";
 export default class LoginPage {
     constructor(page) {
         this.page = page;
+        this.emailInput = page.getByRole('textbox', { name: 'Email*' });
+        this.passwordInput = page.getByRole('textbox', { name: 'Password* Password' });
+        this.submitButton = page.getByRole('button', { name: 'Sign In' });
     }
     
-    async fillEmail() {
-        await this.page.getByRole('textbox', { name: 'Email*' }).fill(email);
+    async fillEmail(email) {
+        await this.emailInput.fill(email);
     }
-    async fillPassword() {
-        await this.page.getByRole('textbox', { name: 'Password* Password' }).fill(password);
+    async fillPassword(password) {
+        await this.passwordInput.fill(password);
     }
     async clickSubmit() {
-        await this.page.getByRole('button', { name: 'Sign In' }).click();
+        await this.submitButton.click();
     }
-
 }
