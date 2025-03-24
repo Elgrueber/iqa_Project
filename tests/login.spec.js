@@ -21,11 +21,3 @@ test('user able to login with correct credentials', async ({
   await loginPage.fillPassword(env.process.USER_PASSWORD);
   await loginPage.clickSubmit();
 })
-
-// test.only('user doint smth', async ({
-//   page,
-//   loginUser,
-// }) => {
-//   await loginUser(page, loginPage, headerComponent);
-// }
-// );
